@@ -5,7 +5,4 @@
 
 <mapper namespace="com.itheima.mapper.DeptMapper">
 
-    <select id="selectAll" resultType="com.itheima.pojo.Dept">
-        select * from dept
-    </select>
 </mapper>
