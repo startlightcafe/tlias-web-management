@@ -82,6 +82,11 @@
             <version>2.3.3</version>
         </dependency>
 
+        <!-- @ConfigurationProperties 的可选操作 (提示功能) -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+        </dependency>
 
     </dependencies>
 

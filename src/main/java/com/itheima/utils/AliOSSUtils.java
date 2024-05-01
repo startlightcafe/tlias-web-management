@@ -5,6 +5,8 @@ import com.aliyun.oss.OSSClientBuilder;
 import com.aliyun.oss.common.auth.CredentialsProviderFactory;
 import com.aliyun.oss.common.auth.EnvironmentVariableCredentialsProvider;
 import com.aliyuncs.exceptions.ClientException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 import java.io.*;
@@ -16,14 +18,15 @@ import java.util.UUID;
 @Component
 public class AliOSSUtils {
 
-    private String endpoint = "https://oss-cn-beijing.aliyuncs.com";
+    @Autowired
+    private AliOSSProperties aliOSSProperties;
 
-    private String bucketName = "cloud-tlias";
-
-    /**
-     * 实现上传图片到OSS
-     */
+    //实现上传图片到OSS
     public String upload(MultipartFile file) throws IOException, ClientException {
+        //获取阿里云OSS参数
+        String endpoint = aliOSSProperties.getEndpoint();
+        String bucketName = aliOSSProperties.getBucketName();
+
         // 获取上传的文件的输入流
         InputStream inputStream = file.getInputStream();
 

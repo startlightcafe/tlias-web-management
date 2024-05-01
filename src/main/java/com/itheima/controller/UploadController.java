@@ -6,6 +6,7 @@ import com.itheima.utils.AliOSSUtils;
 import lombok.extern.slf4j.Slf4j;
 import net.sf.jsqlparser.expression.operators.arithmetic.Concat;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;

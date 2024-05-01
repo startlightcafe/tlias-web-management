@@ -48,4 +48,20 @@ public class EmpController {
         empService.insert(emp);
         return Result.success();
     }
+
+    //根据 id查询员工
+    @GetMapping("/emps/{id}")
+    public Result selectById(@PathVariable Integer id){
+        log.info("根据id查询员工信息: id={}",id);
+        Emp emp = empService.selectById(id);
+        return Result.success(emp);
+    }
+
+    //修改员工信息 (请求数据是Jsn格式的, 所以要添加注解@RequestBody)
+    @PutMapping("emps")
+    public Result update(@RequestBody Emp emp){
+        log.info("更新员工信息:{}",emp);
+        empService.update(emp);
+        return Result.success();
+    }
 }

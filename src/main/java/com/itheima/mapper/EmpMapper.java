@@ -4,6 +4,7 @@ import com.itheima.pojo.Emp;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -32,4 +33,9 @@ public interface EmpMapper {
     void deleteAll(Integer[] ids);
 
     void insert(Emp emp);
+
+    @Select("select * from emp where id = #{id}")
+    Emp selectById(Integer id);
+
+    void update(Emp emp);
 }
