@@ -1,9 +1,11 @@
 package com.itheima.controller;
 
+import com.itheima.pojo.Emp;
 import com.itheima.pojo.PageBean;
 import com.itheima.pojo.Result;
 import com.itheima.service.EmpService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
@@ -39,4 +41,11 @@ public class EmpController {
     }
 
 
+    //添加员工 (传递过来的是 Json格式的数据, 所以要使用@RequestBody)
+    @PostMapping("/emps")
+    public Result insert(@RequestBody Emp emp){
+        log.info("新增员工: {}",emp);
+        empService.insert(emp);
+        return Result.success();
+    }
 }

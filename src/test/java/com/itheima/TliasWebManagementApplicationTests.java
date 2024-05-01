@@ -11,30 +11,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
+import java.util.UUID;
 
 @SpringBootTest
 class TliasWebManagementApplicationTests {
-    @Autowired
-    private DeptService deptService;
 
     @Test
-    void contextLoads() {
+    public void testUuid(){
+        String uuid = UUID.randomUUID().toString();
     }
 
+    //阿里云OSS使用测试
     @Test
-    public void testSelectAll(){
-        List<Dept> depts = deptService.selectAll();
-        System.out.println(depts);
-    }
-
-    @Autowired
-    private EmpMapper empMapper;
-    @Test
-    public void testList() {
-//        List<Emp> list = empMapper.select("张", (short) 1, LocalDate.of(2010, 1, 1),
-//                LocalDate.of(2020, 1, 1));
-        List<Emp> list = empMapper.select( null, (short) 1, null,null);
-        list.forEach(System.out::println);
-
+    public void testaliyunOSS() throws Exception {
+        Demo.aliyunOSS();
     }
 }

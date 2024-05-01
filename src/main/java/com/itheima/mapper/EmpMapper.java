@@ -30,4 +30,6 @@ public interface EmpMapper {
     public List<Emp> select(String name, Short gender, LocalDate begin, LocalDate end);
 
     void deleteAll(Integer[] ids);
+
+    void insert(Emp emp);
 }
