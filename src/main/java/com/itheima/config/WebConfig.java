@@ -13,7 +13,7 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override //注册拦截器
     public void addInterceptors(InterceptorRegistry registry) {
-        //指定拦截器拦截的资源
+        //指定拦截器拦截的资源 与不需要拦截的资源
         registry.addInterceptor(loginCheckInterceptor).addPathPatterns("/**");
     }
 }
