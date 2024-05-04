@@ -1,5 +1,6 @@
 package com.itheima.controller;
 
+import com.itheima.anno.Log;
 import com.itheima.pojo.Emp;
 import com.itheima.pojo.PageBean;
 import com.itheima.pojo.Result;
@@ -33,6 +34,7 @@ public class EmpController {
 
 
     //批量删除员工 (<foreach>)
+    @Log
     @DeleteMapping("/emps/{ids}")
     public Result deleteAll(@PathVariable Integer[] ids){ //也可以使用List集合接收
         log.info("批量删除操作，ids: {}", (Object) ids);
@@ -42,6 +44,7 @@ public class EmpController {
 
 
     //添加员工 (传递过来的是 Json格式的数据, 所以要使用@RequestBody)
+    @Log
     @PostMapping("/emps")
     public Result insert(@RequestBody Emp emp){
         log.info("新增员工: {}",emp);
@@ -58,6 +61,7 @@ public class EmpController {
     }
 
     //修改员工信息 (请求数据是Jsn格式的, 所以要添加注解@RequestBody)
+    @Log
     @PutMapping("emps")
     public Result update(@RequestBody Emp emp){
         log.info("更新员工信息:{}",emp);

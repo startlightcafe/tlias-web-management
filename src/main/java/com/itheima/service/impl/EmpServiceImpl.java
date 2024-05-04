@@ -2,6 +2,7 @@ package com.itheima.service.impl;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import com.itheima.anno.Log;
 import com.itheima.mapper.EmpMapper;
 import com.itheima.pojo.Emp;
 import com.itheima.pojo.PageBean;
@@ -49,6 +50,7 @@ public class EmpServiceImpl implements EmpService {
     public void deleteAll(Integer[] ids) {
         empMapper.deleteAll(ids);
     }
+
 
     @Override
     public void insert(Emp emp) {

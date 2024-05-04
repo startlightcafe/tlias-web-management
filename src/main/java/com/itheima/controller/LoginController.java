@@ -28,6 +28,7 @@ public class LoginController {
         //登录成功，生成令牌，下发令牌
         if(e != null) {
             Map<String,Object> claims = new HashMap<>();
+            claims.put("id", e.getId());
             claims.put("username", e.getUsername());
             claims.put("password", e.getPassword());
 
