@@ -102,6 +102,12 @@
             <version>1.2.76</version>
         </dependency>
 
+        <!-- 引入AOP的依赖 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+
     </dependencies>
 
     <dependencyManagement>

@@ -34,3 +34,8 @@ aliyun:
   oss:
     endpoint: https://oss-cn-beijing.aliyuncs.com
     bucketName: cloud-tlias
+
+#开启事务管理日志
+logging:
+  level:
+    org.springframework.jdbc.support.JdbcTransactionManager: debug
